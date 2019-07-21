@@ -1,0 +1,34 @@
+.navbar-nav-item-btn {
+    display: block;
+    float: left;
+    font-family: 'KanitMedium';
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    background-color: #000000;
+    color: #fff;
+    border-right: 1px solid #ffffff;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    padding: 5px 35px;
+    margin: 16px 0px 20px 0px;
+    cursor: pointer;
+}
+.navbar-nav-item-btn:hover {
+    font-weight: bold;
+    color: rgb(201, 201, 201);
+}
+@media screen and (max-width: 768px) {
+    .navbar-nav-item-btn {
+        padding: 1.6em 0.5em;
+        margin: 0;
+    }
+}
+
+.navbar-nav-item-btn:first-child {
+    border-left: 1px solid #ffffff;
+}
+
+button:focus {
+    outline: none;
+}

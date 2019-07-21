@@ -1,25 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Router, Route, Switch } from 'react-router-dom';
+import history from './history/history';
+import Splash from './pages/Splash/index';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Portfolio for Jackson Sabol - <code>Full Stack Web Developer.</code>
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router history={history}>
+      <Switch>
+        <Route exact path="/" component={Splash} />
+        <Route component={Splash} />
+      </Switch>
+    </Router>
   );
 }
 
