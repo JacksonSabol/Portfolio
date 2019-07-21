@@ -35,11 +35,7 @@
     height: 70px;
     border-bottom: 1px solid rgb(66, 66, 66);
     background-color: #000000;
-}
-
-.f-pad {
-	padding-left: 50px;
-	padding-right: 50px;
+    z-index: 999;
 }
 
 /* .welcome-message {

@@ -34,22 +34,22 @@ class Navbar extends Component {
         <a href="/" className="home-logo">{`Sabol Designs`}</a>
         <div className={`navbar-nav ${navbarToggled}`}>
           <NavbarItem
-            onClick={() => this.props.handlePageScroll("#about")}
+            onClick={() => this.props.handlePageScroll("about")}
           >
             About Me
           </NavbarItem>
           <NavbarItem
-            onClick={() => this.props.handlePageScroll("#portfolio")}
+            onClick={() => this.props.handlePageScroll("portfolio")}
           >
             Portfolio
           </NavbarItem>
           <NavbarItem
-            onClick={() => this.props.handlePageScroll("#services")}
+            onClick={() => this.props.handlePageScroll("services")}
           >
             Services
           </NavbarItem>
           <NavbarItem
-            onClick={() => this.props.handlePageScroll("#contact")}
+            onClick={() => this.props.handlePageScroll("contact")}
           >
             Contact
           </NavbarItem>
