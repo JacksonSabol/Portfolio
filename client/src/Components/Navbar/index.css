@@ -35,6 +35,11 @@
     height: 70px;
     border-bottom: 1px solid rgb(66, 66, 66);
     background-color: #000000;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0.85)";       /* IE 8 */
+    filter: alpha(opacity=0.85);  /* IE 5-7 */
+    -moz-opacity: 0.85;          /* Netscape */
+    -khtml-opacity: 0.85;        /* Safari 1.x */
+    opacity: 0.85;				  /* Good Browsers */
     z-index: 999;
 }
 
@@ -51,16 +56,6 @@
   margin: 0.7em 0px;
   height: 33.3px;
   width: 24px;
-}
-
-.home-logo {
-  font-family: 'Recharge';
-  display: block;
-  float: left;
-  color: #ffffff;
-  text-decoration: none;
-  padding: 5px 35px 5px 5px;
-  margin: 1em 1em 1em 0px;
 }
 
 /* Hamburger Menu */

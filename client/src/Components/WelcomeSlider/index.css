@@ -6,7 +6,8 @@
 	min-height: 950px;
 	position: relative;
 	display: table;
-	width: 100%;
+    width: 100%;
+    background-size: cover;
 }
 
 .ws-item:after {
@@ -40,11 +41,11 @@
 	margin-bottom: 20px;
 	position: relative;
 	left: 150px;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";       /* IE 8 */
-    filter: alpha(opacity=0);  /* IE 5-7 */
-    -moz-opacity: 0;          /* Netscape */
-    -khtml-opacity: 0;        /* Safari 1.x */
-	opacity: 0;				  /* Good Browsers */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";       /* IE 8 */
+    filter: alpha(opacity=1);  /* IE 5-7 */
+    -moz-opacity: 1;          /* Netscape */
+    -khtml-opacity: 1;        /* Safari 1.x */
+	opacity: 1;				  /* Good Browsers */
 }
 
 .ws-item .ws-des {
@@ -53,10 +54,10 @@
 	line-height: 1.4;
 	position: relative;
 	left: 150px;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";       /* IE 8 */
-    filter: alpha(opacity=0);  /* IE 5-7 */
-    -moz-opacity: 0;          /* Netscape */
-    -khtml-opacity: 0;        /* Safari 1.x */
-	opacity: 0;				  /* Good Browsers */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";       /* IE 8 */
+    filter: alpha(opacity=1);  /* IE 5-7 */
+    -moz-opacity: 1;          /* Netscape */
+    -khtml-opacity: 1;        /* Safari 1.x */
+	opacity: 1;				  /* Good Browsers */
 }
  

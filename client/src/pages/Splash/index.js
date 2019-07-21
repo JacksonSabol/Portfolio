@@ -52,7 +52,7 @@ class Splash extends Component {
                         handlePageScroll={this.handlePageScroll}
                     />
                 </header>
-                <section className="ws-section">
+                <section className="ws-section" id="top">
                     <WelcomeSlider />
                 </section>
                 <section id="about">

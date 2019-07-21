@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import './index.css';
-import { NavbarItem } from '../Button';
+import { NavbarItem, SabolDesigns } from '../Button';
 import logoImg from '../../img/WhiteSabol.png';
 
 class Navbar extends Component {
@@ -31,7 +31,11 @@ class Navbar extends Component {
           </div>
         </div>
         <img src={logoImg} className="logo" alt="Sabol Designs" />
-        <a href="/" className="home-logo">{`Sabol Designs`}</a>
+        <SabolDesigns
+            onClick={() => this.props.handlePageScroll("top")}
+          >
+            Jackson Sabol
+          </SabolDesigns>
         <div className={`navbar-nav ${navbarToggled}`}>
           <NavbarItem
             onClick={() => this.props.handlePageScroll("about")}
