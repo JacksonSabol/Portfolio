@@ -63,6 +63,71 @@
 	opacity: 1;				  /* Good Browsers */
 }
 
+.ws-nav {
+    position: absolute;
+    display: inline-block;
+    right: 150px;
+    top: 50%;
+    font-size: 20px;
+	color: #fff;
+	z-index: 99;
+}
+
+.ws-next {
+	z-index: 100;
+	cursor: pointer;
+}
+
+.ws-dots {
+    position: absolute;
+    bottom: -5px;
+	left: 150px;
+}
+
+.ws-dots .ws-dot {
+    display: inline-block;
+    margin-right: 30px;
+    color: #fff;
+    font-size: 14px;
+    padding-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.ws-dots .ws-dot:after {
+    position: absolute;
+    content: '';
+    width: 2px;
+    height: 0;
+    left: 50%;
+    top: 30px;
+    margin-left: -2px;
+    background: #fff;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+	transition: all 0.4s;
+}
+
+.ws-dots .ws-dot.active:after {
+    height: 100%;
+}
+
+.ws-dots .ws-dot.active span {
+	color: #cc1847;
+}
+
+@media only screen and (max-width: 1650px) {
+	.ws-dots {
+		left: 90px;
+	}
+}
+
+@media only screen and (max-width: 1510px) {
+	.ws-dots {
+		left: 30px;
+	}
+}
+
 @media only screen and (min-width: 1200px) and (max-width: 1305px) {
 	.ws-item .ws-title {
 		font-size: 80px;

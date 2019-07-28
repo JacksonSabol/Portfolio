@@ -15,3 +15,10 @@ export function NavbarItem(props) {
         </button>
     );
 }
+export function NextButton(props) {
+    return (
+        <button className="next-btn" {...props}>
+            &gt;&gt;&gt;
+        </button>
+    );
+}
