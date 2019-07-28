@@ -4,9 +4,8 @@ import WelcomeSlider from '../../Components/WelcomeSlider';
 import './index.css';
 
 class Splash extends Component {
-    // Placeholder
     state = {
-        scrollLocation: ""
+        scrollToggle: false
     };
 
     offset = (elm) => {
@@ -44,12 +43,33 @@ class Splash extends Component {
         animateScroll();
     };
 
+    handleNavbarBg = () => {
+        const navbarHeight = document.getElementById('scroll-toggler');
+        const startY = navbarHeight.offsetHeight * 2;
+        const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (currentScrollTop > startY) {
+            this.setState({ scrollToggle: true });
+        } else {
+            this.setState({ scrollToggle: false });
+        }
+    };
+
+    componentDidMount = () => {
+        window.addEventListener('scroll', this.handleNavbarBg);
+    };
+    
+    componentWillUnmount = () => {
+        window.removeEventListener('scroll', this.handleNavbarBg);
+    };
+
     render() {
+        const scrollToggle = this.state.scrollToggle ? "scrolled" : "";
         return (
             <div>
                 <header>
                     <Navbar
                         handlePageScroll={this.handlePageScroll}
+                        class={scrollToggle}
                     />
                 </header>
                 <section className="ws-section" id="top">

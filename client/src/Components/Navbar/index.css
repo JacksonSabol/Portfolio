@@ -28,40 +28,36 @@
 }
 
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 70px;
-    border-bottom: 1px solid rgb(66, 66, 66);
-    background-color: #000000;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0.85)";       /* IE 8 */
-    filter: alpha(opacity=0.85);  /* IE 5-7 */
-    -moz-opacity: 0.85;          /* Netscape */
-    -khtml-opacity: 0.85;        /* Safari 1.x */
-    opacity: 0.85;				  /* Good Browsers */
-    z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  z-index: 999;
+  -webkit-transition: all 0.6s ease-out;
+  -moz-transition: all 0.6s ease-out;
+  -o-transition: all 0.6s ease-out;
+  -ms-transition: all 0.6s ease-out;
+  transition: all 0.6s ease-out;
 }
 
-/* .welcome-message {
-    color: #d3d3d3;
-    display: block;
-    float: right;
-    margin-right: 50px;
-} */
+.navbar.scrolled {
+  border-bottom: 1px solid rgb(66, 66, 66);
+  background: rgb(68, 68, 68); /* IE */
+  background: rgba(0, 0, 0, 0.95); /* NON-IE */
+}
 
 .logo {
   display: block;
   float: left;
-  margin: 0.7em 0px;
-  height: 33.3px;
-  width: 24px;
+  margin: 0.8em 0 0.7em 0;
+  height: 27.7px;
+  width: 20px;
 }
 
 /* Hamburger Menu */
 .navbar .navbar-hamburger {
-    display: block;
-    float: right;
+    display: none;
 }
 .navbar .navbar-toggler {
     background: none;
@@ -146,6 +142,15 @@
     }
 }
 @media screen and (max-width: 768px) {
+    .navbar {
+      border-bottom: 1px solid rgb(66, 66, 66);
+      background: rgb(68, 68, 68); /* IE */
+      background: rgba(0, 0, 0, 0.95); /* NON-IE */
+    }
+    .navbar .navbar-hamburger {
+      display: block;
+      float: right;
+    }
     .navbar .navbar-nav {
         visibility: collapse;
         position: absolute;
@@ -163,6 +168,8 @@
         right: 0px;
         display: block;
         border: 1px solid rgb(66, 66, 66);
+        background: rgb(68, 68, 68); /* IE */
+        background: rgba(0, 0, 0, 0.95); /* NON-IE */
         border-top: none;
         opacity: 1;
         z-index: 1;

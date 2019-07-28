@@ -8,6 +8,7 @@
 	display: table;
     width: 100%;
     background-size: cover;
+    overflow: hidden;
 }
 
 .ws-item:after {
@@ -28,8 +29,8 @@
 .ws-item .ws-text {
 	position: relative;
 	display: table-cell;
-	vertical-align: middle;
-	z-index: 2;
+    vertical-align: middle;
+    z-index: 2;
 }
 
 .ws-item .ws-title {
@@ -45,7 +46,8 @@
     filter: alpha(opacity=1);  /* IE 5-7 */
     -moz-opacity: 1;          /* Netscape */
     -khtml-opacity: 1;        /* Safari 1.x */
-	opacity: 1;				  /* Good Browsers */
+    opacity: 1;				  /* Good Browsers */
+    /* transition: all 0.6s ease-in-out; */
 }
 
 .ws-item .ws-des {
@@ -60,4 +62,84 @@
     -khtml-opacity: 1;        /* Safari 1.x */
 	opacity: 1;				  /* Good Browsers */
 }
- 
+
+@media only screen and (min-width: 1200px) and (max-width: 1305px) {
+	.ws-item .ws-title {
+		font-size: 80px;
+		margin-bottom: 20px;
+	}
+	.ws-item .ws-des {
+		font-size: 25px;
+	}
+}
+
+/* Medium screen */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	.ws-item .ws-title {
+		font-size: 65px;
+		margin-bottom: 20px;
+	}
+	.ws-item .ws-des {
+		font-size: 18px;
+	}
+}
+
+/* Tablet iPad Pro */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+	.ws-item .ws-title {
+		font-size: 49px;
+		margin-bottom: 20px;
+	}
+	.ws-item .ws-des {
+		font-size: 14px;
+	}
+}
+
+/* Large Mobile/iPad */
+@media only screen and (max-width: 768px) {
+	.ws-item .ws-title {
+		font-size: 38px;
+        margin-bottom: 20px;
+        left: 140px;
+	}
+	.ws-item .ws-des {
+        font-size: 12px;
+        left: 140px;
+	}
+}
+
+@media only screen and (max-width: 588px) {
+	.ws-item .ws-title {
+		font-size: 29.5px;
+        margin-bottom: 20px;
+        left: 10px;
+	}
+	.ws-item .ws-des {
+        font-size: 10px;
+        left: 10px;
+	}
+}
+/* Small Mobile */
+@media only screen and (max-width: 479px) {
+	.ws-item .ws-title {
+		font-size: 24px;
+        margin-bottom: 20px;
+        left: 10px;
+	}
+	.ws-item .ws-des {
+        font-size: 8.5px;
+        left: 10px;
+	}
+}
+/* Extra Small Mobile */
+@media only screen and (max-width: 400px) {
+	.ws-item .ws-title {
+		font-size: 20px;
+        margin-bottom: 20px;
+        left: 10px;
+	}
+	.ws-item .ws-des {
+        font-size: 7.5px;
+        left: 10px;
+	}
+}

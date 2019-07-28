@@ -19,7 +19,7 @@ class Navbar extends Component {
     const iconToggled = this.state.toggled ? "toggled" : "";
     const navbarToggled = this.state.toggled ? "open" : "";
     return (
-      <nav className="navbar">
+      <nav className={`navbar ${this.props.class}`} id="scroll-toggler">
         {/* <p className="welcome-message">Welcome, {this.props.username}!</p> */}
         <div className="navbar-hamburger">
           <div className={`navbar-toggle ${iconToggled}`}>
