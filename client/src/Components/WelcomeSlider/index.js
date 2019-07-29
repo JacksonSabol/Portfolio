@@ -25,16 +25,16 @@ const content = {
 class WelcomeSlider extends Component {
     state = {
         intervalId: 0,
-        img: 1,
-        bgImg: content[1].bgImg,
-        title: content[1].title,
-        des: content[1].des
+        img: 0
     };
 
     componentDidMount = () => {
         this.preloadImages();
         let intervalId = setInterval(this.toggleSlider, 8000);
-        this.setState({ intervalId: intervalId });
+        this.setState({
+            intervalId: intervalId,
+            img: 1
+        });
     };
 
     componentWillUnmount = () => {
@@ -50,27 +50,12 @@ class WelcomeSlider extends Component {
     };
 
     toggleSlider = () => {
-        if (this.state.img === 1) {
-            this.setState({
-                img: 2,
-                bgImg: content[2].bgImg,
-                title: content[2].title,
-                des: content[2].des
-            });
-        } else if (this.state.img === 2) {
-            this.setState({
-                img: 3,
-                bgImg: content[3].bgImg,
-                title: content[3].title,
-                des: content[3].des
-            });
+        if (this.state.img < 3) {
+            this.setState(state => ({
+                img: state.img + 1
+            }));
         } else {
-            this.setState({
-                img: 1,
-                bgImg: content[1].bgImg,
-                title: content[1].title,
-                des: content[1].des
-            });
+            this.setState({ img: 1 });
         }
     }
 
@@ -82,16 +67,30 @@ class WelcomeSlider extends Component {
     }
 
     render() {
-        const { bgImg, title, des } = this.state;
-        const activeOne = this.state.img === 1 ? "active" : "";
-        const activeTwo = this.state.img === 2 ? "active" : "";
-        const activeThree = this.state.img === 3 ? "active" : "";
+        const activeOne = this.state.img === 1 ? " active" : "";
+        const activeTwo = this.state.img === 2 ? " active" : "";
+        const activeThree = this.state.img === 3 ? " active" : "";
+        const animatedOne = this.state.img === 1 ? " fade" : "";
+        const animatedTwo = this.state.img === 2 ? " fade" : "";
+        const animatedThree = this.state.img === 3 ? " fade" : "";
         return (
             <div className="welcome-slider">
-                <div className="ws-item" style={{ backgroundImage: `url("${bgImg}")` }}>
+                <div className={`ws-item${animatedOne}`} style={{ backgroundImage: `url("${content[1].bgImg}")` }}>
                     <div className="ws-text">
-                        <h2 className="ws-title">{title}</h2>
-                        <p className="ws-des">{des}</p>
+                        <h2 className="ws-title">{content[1].title}</h2>
+                        <p className="ws-des">{content[1].des}</p>
+                    </div>
+                </div>
+                <div className={`ws-item${animatedTwo}`} style={{ backgroundImage: `url("${content[2].bgImg}")` }}>
+                    <div className="ws-text">
+                        <h2 className="ws-title">{content[2].title}</h2>
+                        <p className="ws-des">{content[2].des}</p>
+                    </div>
+                </div>
+                <div className={`ws-item${animatedThree}`} style={{ backgroundImage: `url("${content[3].bgImg}")` }}>
+                    <div className="ws-text">
+                        <h2 className="ws-title">{content[3].title}</h2>
+                        <p className="ws-des">{content[3].des}</p>
                     </div>
                 </div>
                 <div className="ws-nav">
@@ -103,13 +102,13 @@ class WelcomeSlider extends Component {
                     </div>
                 </div>
                 <div className="ws-dots">
-                    <div className={`ws-dot ${activeOne}`}>
+                    <div className={`ws-dot${activeOne}`}>
                         01<span>.</span>
                     </div>
-                    <div className={`ws-dot ${activeTwo}`}>
+                    <div className={`ws-dot${activeTwo}`}>
                         02<span>.</span>
                     </div>
-                    <div className={`ws-dot ${activeThree}`}>
+                    <div className={`ws-dot${activeThree}`}>
                         03<span>.</span>
                     </div>
                 </div>
