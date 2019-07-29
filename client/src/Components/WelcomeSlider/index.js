@@ -32,12 +32,21 @@ class WelcomeSlider extends Component {
     };
 
     componentDidMount = () => {
+        this.preloadImages();
         let intervalId = setInterval(this.toggleSlider, 8000);
         this.setState({ intervalId: intervalId });
     };
 
     componentWillUnmount = () => {
         clearInterval(this.state.intervalId);
+    };
+
+    preloadImages = () => {
+        [sliderOne, sliderTwo, sliderThree].map(src => {
+            let image = new Image()
+            image.src = src
+            return image
+        });
     };
 
     toggleSlider = () => {
@@ -104,6 +113,13 @@ class WelcomeSlider extends Component {
                         03<span>.</span>
                     </div>
                 </div>
+                {/* <div style={{ 'visibility': 'hidden', 'width': 0, 'height': 0, 'overflow': 'hidden' }}>
+                    {[sliderOne, sliderTwo, sliderThree].map((preloadImage) => {
+                        return (
+                            <img src={preloadImage} alt="preloading img" key={`${preloadImage}`} />
+                        );
+                    })}
+                </div> */}
             </div>
         );
     }
