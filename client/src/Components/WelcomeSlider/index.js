@@ -73,24 +73,27 @@ class WelcomeSlider extends Component {
         const animatedOne = this.state.img === 1 ? " fade" : "";
         const animatedTwo = this.state.img === 2 ? " fade" : "";
         const animatedThree = this.state.img === 3 ? " fade" : "";
+        const slideOne = this.state.img === 1 ? " slide" : "";
+        const slideTwo = this.state.img === 2 ? " slide" : "";
+        const slideThree = this.state.img === 3 ? " slide" : "";
         return (
             <div className="welcome-slider">
                 <div className={`ws-item${animatedOne}`} style={{ backgroundImage: `url("${content[1].bgImg}")` }}>
                     <div className="ws-text">
-                        <h2 className="ws-title">{content[1].title}</h2>
-                        <p className="ws-des">{content[1].des}</p>
+                        <h2 className={`ws-title${slideOne}`}>{content[1].title}</h2>
+                        <p className={`ws-des${slideOne}`}>{content[1].des}</p>
                     </div>
                 </div>
                 <div className={`ws-item${animatedTwo}`} style={{ backgroundImage: `url("${content[2].bgImg}")` }}>
                     <div className="ws-text">
-                        <h2 className="ws-title">{content[2].title}</h2>
-                        <p className="ws-des">{content[2].des}</p>
+                        <h2 className={`ws-title${slideTwo}`}>{content[2].title}</h2>
+                        <p className={`ws-des${slideTwo}`}>{content[2].des}</p>
                     </div>
                 </div>
                 <div className={`ws-item${animatedThree}`} style={{ backgroundImage: `url("${content[3].bgImg}")` }}>
                     <div className="ws-text">
-                        <h2 className="ws-title">{content[3].title}</h2>
-                        <p className="ws-des">{content[3].des}</p>
+                        <h2 className={`ws-title${slideThree}`}>{content[3].title}</h2>
+                        <p className={`ws-des${slideThree}`}>{content[3].des}</p>
                     </div>
                 </div>
                 <div className="ws-nav">
