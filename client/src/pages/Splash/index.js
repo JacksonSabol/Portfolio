@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import './index.css';
 import Navbar from "../../Components/Navbar";
 import WelcomeSlider from '../../Components/WelcomeSlider';
-import './index.css';
+import { About } from '../../Components/About';
+
 
 class Splash extends Component {
     state = {
@@ -75,10 +77,10 @@ class Splash extends Component {
                 <section className="ws-section" id="top">
                     <WelcomeSlider />
                 </section>
-                <section id="about">
-                    <p>My name is Jackson Sabol, and I am a Full-Stack Web Developer based in the San Francisco Bay Area. I primarily focus on front-end development, but I'm comfortable with back-end work as well, using technologies and libraries like React, Node, Express, MySQL, and MongoDB. Before I became a web developer, I worked as a conservation biologist for various consulting firms across the western United States. Over the years, I’ve been responsible for collecting, analyzing, and presenting large amounts of invaluable data on the progress of restoration projects. The management of biological data is what got me interested in programming!</p>
-                    <p>While I was a web application developer, I developed tools for field safety and collection of biologically relevant data. I built one application that provides a user-friendly interface for performing a safety checklist prior to the start of work each day. The application runs through the curated safety topics one-by-one so that nothing slips through the cracks, and each field biologist can safely conduct their surveys. Since its implementation, the company has experienced zero OSHA recordable injuries, enhancing their safety record and hire-ability by large clients.</p>
-                    <p>In addition to the safety checklist application, I developed a data collection platform that interfaces with the company’s existing database and mapping software. Field biologists are now able to take notes about various natural resources like habitat features, endangered species, and invasive plant dispersal on a device, then sync the data to the database instantly instead of laboring over tedious data entry. This type of problem-solving and knowledge of web application development is something that I’m constantly cultivating, and I look forward to using it to help you!</p>
+                <section className="section-pad" id="about">
+                    <About 
+                        handlePageScroll={this.handlePageScroll}
+                    />
                 </section>
             </div>
         );

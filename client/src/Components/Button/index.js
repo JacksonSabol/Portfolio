@@ -22,3 +22,10 @@ export function NextButton(props) {
         </button>
     );
 }
+export function SiteButton(props) {
+    return (
+        <button className={props.className === "light" ? "site-btn light" : "site-btn"} {...props}>
+            {props.children}
+        </button>
+    );
+}

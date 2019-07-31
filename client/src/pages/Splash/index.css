@@ -1,3 +1,6 @@
-#about {
-    padding: 250px 20px;
+body {
+    font-family: 'Open sans', sans-serif;
+}
+.section-pad {
+    padding: 130px 30px;
 }
