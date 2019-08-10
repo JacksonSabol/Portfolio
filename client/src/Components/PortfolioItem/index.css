@@ -1,0 +1,144 @@
+.single-portfolio {
+	height: 580px;
+	width: 33.333333%;
+	position: relative;
+	float: left;
+	display: block;
+    background-position: center center;
+    background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.single-portfolio.sm-wide {
+	width: 22.222222%;
+}
+
+.single-portfolio:hover .portfolio-info {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";       /* IE 8 */
+    filter: alpha(opacity=1);  /* IE 5-7 */
+    -moz-opacity: 1;          /* Netscape */
+    -khtml-opacity: 1;        /* Safari 1.x */
+	opacity: 1;				  /* Good Browsers */
+}
+
+.portfolio-info {
+	position: absolute;
+	width: calc(100% - 110px);
+	height: calc(100% - 110px);
+	left: 55px;
+	top: 55px;
+    text-align: center;
+    padding: 0;
+	padding-top: 90px;
+    border: 1px solid #fff;
+    cursor: pointer;
+	overflow: hidden;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";       /* IE 8 */
+    filter: alpha(opacity=0);  /* IE 5-7 */
+    -moz-opacity: 0;          /* Netscape */
+    -khtml-opacity: 0;        /* Safari 1.x */
+	opacity: 0;				  /* Good Browsers */
+	-webkit-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	transition: all 0.4s;
+}
+
+.portfolio-info .pfbg {
+	position: absolute;
+	width: 110%;
+	height: 110%;
+	left: -5%;
+	top: -5%;
+	-webkit-transform: scale(1.12);
+	    -ms-transform: scale(1.12);
+	        transform: scale(1.12);
+	-webkit-filter: blur(20px);
+	        filter: blur(20px);
+	background-position: center center;
+}
+
+.portfolio-info h5 {
+	letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 14px;
+	color: #fff;
+	z-index: 9;
+    position: relative;
+    margin: 0;
+	margin-bottom: 10px;
+}
+
+.portfolio-info p {
+	font-size: 14px;
+	color: #fff;
+	z-index: 9;
+    position: relative;
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+/* Media Queries */
+
+/* Small desktop */
+@media only screen and (max-width: 1366px) {
+	.single-portfolio {
+		height: 400px;
+	}
+	.portfolio-info {
+		width: calc(100% - 40px);
+		height: calc(100% - 40px);
+		left: 20px;
+		top: 20px;
+		padding-top: 62px;
+	}
+}
+/* Medium screen : 992px. */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	.single-portfolio {
+		width: 50%;
+	}
+	.single-portfolio.sm-wide {
+		width: 50%;
+	}
+	.single-portfolio .portfolio-info {
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";       /* IE 8 */
+		filter: alpha(opacity=1);  /* IE 5-7 */
+		-moz-opacity: 1;          /* Netscape */
+		-khtml-opacity: 1;        /* Safari 1.x */
+		opacity: 1;				  /* Good Browsers */
+    }
+}
+
+/* Tablet :768px. */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	.single-portfolio {
+		width: 50%;
+	}
+	.single-portfolio.sm-wide {
+		width: 50%;
+	}
+	.single-portfolio .portfolio-info {
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";       /* IE 8 */
+		filter: alpha(opacity=1);  /* IE 5-7 */
+		-moz-opacity: 1;          /* Netscape */
+		-khtml-opacity: 1;        /* Safari 1.x */
+		opacity: 1;				  /* Good Browsers */
+    }
+}
+
+/* Large Mobile :480px. */
+@media only screen and (max-width: 767px) {
+	.single-portfolio {
+		width: 100%;
+	}
+	.single-portfolio.sm-wide {
+		width: 100%;
+	}
+	.single-portfolio .portfolio-info {
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";       /* IE 8 */
+		filter: alpha(opacity=1);  /* IE 5-7 */
+		-moz-opacity: 1;          /* Netscape */
+		-khtml-opacity: 1;        /* Safari 1.x */
+		opacity: 1;				  /* Good Browsers */
+    }
+}

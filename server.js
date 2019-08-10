@@ -1,6 +1,7 @@
 // Dependencies
 const express = require("express");
 require('dotenv').config();
+// const path = require('path');
 
 // Define port depending on environment
 const PORT = process.env.PORT || 3001;
@@ -22,9 +23,9 @@ require("./mail-routes")(app);
 
 // Controls
 // Send every GET request to the React app
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
+// app.get("*", (req, res) => {
+//     res.sendFile(path.join(__dirname, "./client/build/index.html"));
+// });
 // Send an error for every other POST request that's not mail related
 app.post("*", (req, res) => {
     res.status(404).send('Resource Not Found');

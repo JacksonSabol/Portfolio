@@ -16,7 +16,6 @@
 .intro-text {
     display: block;
     float: left;
-    padding-top: 17px;
     width: 33.333333333%;
 }
 .intro-text p {
@@ -41,16 +40,6 @@
 .intro-figure img {
     width: 100%;
     height: 100%;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0.7)";
-    filter: alpha(opacity=0.7);
-    -moz-opacity: 0.7;
-    -khtml-opacity: 0.7;
-    opacity: 0.7;
-}
-.intro-figure img:hover {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0.8)";
-    filter: alpha(opacity=0.8);
-    -moz-opacity: 0.8;
-    -khtml-opacity: 0.8;
-    opacity: 0.8;
+    -webkit-filter: grayscale(80%) contrast(80%) brightness(160%);
+    filter: grayscale(80%) contrast(80%) brightness(160%);
 }

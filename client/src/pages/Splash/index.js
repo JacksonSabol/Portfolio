@@ -3,7 +3,7 @@ import './index.css';
 import Navbar from "../../Components/Navbar";
 import WelcomeSlider from '../../Components/WelcomeSlider';
 import { About } from '../../Components/About';
-
+import Portfolio from '../../Components/Portfolio';
 
 class Splash extends Component {
     state = {
@@ -81,6 +81,9 @@ class Splash extends Component {
                     <About 
                         handlePageScroll={this.handlePageScroll}
                     />
+                </section>
+                <section className="portfolio-section section-p-pad" id="portfolio">
+                    <Portfolio />
                 </section>
             </div>
         );

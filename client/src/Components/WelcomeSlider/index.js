@@ -4,6 +4,7 @@ import sliderOne from '../../img/slider/1.jpg';
 import sliderTwo from '../../img/slider/2.jpg';
 import sliderThree from '../../img/slider/3.jpg';
 import { NextButton } from "../Button";
+import PreloadImages from "../PreloadImages";
 
 const content = {
     1: {
@@ -25,11 +26,12 @@ const content = {
 class WelcomeSlider extends Component {
     state = {
         intervalId: 0,
-        img: 0
+        img: 0,
+        activeImgIndex: 0
     };
 
     componentDidMount = () => {
-        this.preloadImages();
+        // this.preloadImages();
         let intervalId = setInterval(this.toggleSlider, 8000);
         this.setState({
             intervalId: intervalId,
@@ -78,6 +80,9 @@ class WelcomeSlider extends Component {
         const slideThree = this.state.img === 3 ? " slide" : "";
         return (
             <div className="welcome-slider">
+                <PreloadImages
+                    images={[sliderOne, sliderTwo, sliderThree]}
+                />
                 <div className={`ws-item${animatedOne}`} style={{ backgroundImage: `url("${content[1].bgImg}")` }}>
                     <div className="ws-text">
                         <h2 className={`ws-title${slideOne}`}>{content[1].title}</h2>
