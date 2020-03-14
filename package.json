@@ -1,7 +1,7 @@
 {
   "name": "Portfolio",
   "version": "1.0.0",
-  "description": "",
+  "description": "Portfolio Website for Jackson Sabol",
   "main": "server.js",
   "engines": {
     "node": "10.12.0"
