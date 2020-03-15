@@ -11,8 +11,12 @@
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
-    "install": "cd client && npm install",
+    "install:client": "if-env NODE_ENV=production && cd client && npm install --production || cd client && npm install",
     "build": "cd client && npm run build",
+    "docker:build": "docker build -t jacksonsabol/portfolio .",
+    "docker:run": "docker run --rm -d -p 3000:3000 --name running-portfolio jacksonsabol/portfolio:latest",
+    "docker:stop": "docker stop running-portfolio",
+    "docker:push": "docker push jacksonsabol/portfolio",
     "heroku-postbuild": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
