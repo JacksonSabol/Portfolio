@@ -17,6 +17,8 @@
     "docker:run": "docker run --rm -d -p 3000:3000 --name running-portfolio jacksonsabol/portfolio:latest",
     "docker:stop": "docker stop running-portfolio",
     "docker:push": "docker push jacksonsabol/portfolio",
+    "create:aws": "chmod +x ./bin/deploy.sh; ./bin/deploy.sh create",
+    "deploy:aws": "chmod +x ./bin/deploy.sh; ./bin/deploy.sh deploy",
     "heroku-postbuild": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
