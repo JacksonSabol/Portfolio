@@ -59,7 +59,7 @@ class Splash extends Component {
     componentDidMount = () => {
         window.addEventListener('scroll', this.handleNavbarBg);
     };
-    
+
     componentWillUnmount = () => {
         window.removeEventListener('scroll', this.handleNavbarBg);
     };
@@ -78,7 +78,7 @@ class Splash extends Component {
                     <WelcomeSlider />
                 </section>
                 <section className="section-pad" id="about">
-                    <About 
+                    <About
                         handlePageScroll={this.handlePageScroll}
                     />
                 </section>
@@ -87,7 +87,6 @@ class Splash extends Component {
                 </section>
             </div>
         );
-
     }
 }
 
