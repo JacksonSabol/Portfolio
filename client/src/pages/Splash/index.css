@@ -2,7 +2,11 @@ body {
     font-family: 'Open sans', sans-serif;
 }
 section {
+    display: block;
     overflow: auto;
+}
+section.ws-section {
+    overflow: hidden;
 }
 .section-pad {
     padding: 130px 45px;
