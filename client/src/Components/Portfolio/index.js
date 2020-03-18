@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './index.css';
+import Modal from "../../Components/Modal";
+import useModal from '../../Components/Modal/useModal';
 import { PortfolioItem } from '../PortfolioItem';
 import portfolioPicOne from '../../img/portfolio/1.jpg';
 import portfolioPicTwo from '../../img/portfolio/2.jpg';
@@ -53,32 +55,26 @@ const portfolioItems = [
     }
 ];
 
-class Portfolio extends Component {
-    state = {
-        modalId: 0,
-        modalToggled: false
-    };
+const Portfolio = () => {
+    const { isShowing, toggle } = useModal();
+    return (
+        <div className="portfolio-warp">
+            {portfolioItems.map(item => (
+                <PortfolioItem key={item.key}
+                    modalId={item.modalId}
+                    bgImg={item.bgImg}
+                    projectName={item.projectName}
+                    projectCategory={item.projectCategory}
+                />
+            ))}
+            <button className="button-default" onClick={toggle}>Show Modal</button>
+            <Modal
+                isShowing={isShowing}
+                hide={toggle}
+            />
+        </div>
+    );
 
-    handleModalToggle = () => {
-
-    };
-
-    render() {
-        return (
-            <div className="portfolio-warp">
-                {portfolioItems.map(item => (
-                    <PortfolioItem key={item.key}
-                        modalId={item.modalId}
-                        bgImg={item.bgImg}
-                        projectName={item.projectName}
-                        projectCategory={item.projectCategory}
-                        handleModalToggle={this.handleModalToggle}
-                    />
-                ))}
-            </div>
-        );
-
-    }
 }
 
 export default Portfolio;
