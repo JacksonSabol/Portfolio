@@ -13,7 +13,7 @@ echo Step 3/4: Creating new production image;
     mv Dockerfile Dockerfile.prod.off;
     npm run docker:push;
 echo Step 4/4: Creating/Deploying elastic beanstalk environment;
-eb $1 Portfolio; # Create / deploy to the elastic beanstalk environment depending on the value passed in arg $1.
+eb $1 Portfolio-dev; # Create / deploy to the elastic beanstalk environment depending on the value passed in arg $1.
 else
     echo Please commit your changes first.;
 fi
