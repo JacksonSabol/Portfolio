@@ -11,7 +11,6 @@
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
-    "install": "cd client && npm install",
     "install:client": "if-env NODE_ENV=production && cd client && npm install --production || cd client && npm install",
     "build": "cd client && npm run build",
     "docker:build": "docker build -t jacksonsabol/portfolio .",

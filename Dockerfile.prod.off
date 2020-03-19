@@ -19,8 +19,8 @@ COPY . /app
 
 ENV NODE_ENV production
 
-RUN npm run install:client
-RUN npm run build
+# RUN npm run install:client
+# RUN npm run build
 
 ENV PORT 3000
 
