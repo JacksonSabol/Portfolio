@@ -34,6 +34,7 @@ const Modal = ({ isShowing, handleClose, currentItem }) => {
                         <img src={currentItem.thumb} className="modal-img" alt={currentItem.projectName} />
                     </div>
                     <p>{currentItem.projectCategory}</p>
+                    {/* <p>{currentItem.projectDescription}</p> */}
                 </div>
             </div>
         </React.Fragment>, document.body

@@ -9,9 +9,12 @@ import portfolioPicTwo from '../../img/portfolio/WompsAndChompsIconTwo.png';
 import portfolioThumbTwo from '../../img/portfolio/WompsAndChompsFrame.png';
 import portfolioPicThree from '../../img/portfolio/ATSPrototypeThreeIcon.png';
 import portfolioThumbThree from '../../img/portfolio/ATSPrototypeThreeFrame.png';
-import portfolioPicFour from '../../img/portfolio/4.jpg';
-import portfolioPicFive from '../../img/portfolio/5.jpg';
-import portfolioPicSix from '../../img/portfolio/6.jpg';
+import portfolioPicFour from '../../img/portfolio/ScraperAppIcon.png';
+import portfolioThumbFour from '../../img/portfolio/ScraperAppFrame.png';
+import portfolioPicFive from '../../img/portfolio/ReactConcentrationGameIcon.png';
+import portfolioThumbFive from '../../img/portfolio/ReactConcentrationGameFrame.png';
+import portfolioPicSix from '../../img/portfolio/TailMeIcon.png';
+import portfolioThumbSix from '../../img/portfolio/TailMeFrame.png';
 
 const portfolioItems = [
     {
@@ -42,22 +45,25 @@ const portfolioItems = [
         key: 3,
         modalId: 4,
         bgImg: portfolioPicFour,
+        thumb: portfolioThumbFour,
         projectName: "Tech News Scraper",
-        projectCategory: "Portal Web Application"
+        projectCategory: "Forum Web Application"
     },
     {
         key: 4,
         modalId: 5,
         bgImg: portfolioPicFive,
-        projectName: "Google Books Search",
+        thumb: portfolioThumbFive,
+        projectName: "React Concentration Game",
         projectCategory: "Dynamic Web Application"
     },
     {
         key: 5,
         modalId: 6,
         bgImg: portfolioPicSix,
-        projectName: "Amy's Eat the Burger",
-        projectCategory: "Dynamic Web Application"
+        thumb: portfolioThumbSix,
+        projectName: "Tail Me",
+        projectCategory: "SaaS Web Application"
     }
 ];
 

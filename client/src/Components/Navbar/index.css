@@ -59,6 +59,7 @@
 /* Hamburger Menu */
 .navbar .navbar-hamburger {
     display: none;
+    margin-right: 20px;
 }
 .navbar .navbar-toggler {
     background: none;
@@ -137,11 +138,6 @@
     -moz-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 }
-@media screen and (min-width: 768px) {
-    .navbar .navbar-toggle {
-      display: none;
-    }
-}
 @media screen and (max-width: 768px) {
     .navbar {
       border-bottom: 1px solid rgb(66, 66, 66);
@@ -166,7 +162,7 @@
         visibility: visible;
         position: absolute;
         top: 70px;
-        right: 0px;
+        right: 19px;
         display: block;
         border: 1px solid rgb(66, 66, 66);
         background: rgb(68, 68, 68); /* IE */
