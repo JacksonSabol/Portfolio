@@ -11,14 +11,3 @@ section.ws-section {
 .section-pad {
     padding: 130px 45px;
 }
-
-@media only screen and (max-width: 965px) {
-    #about {
-        background: url('../../img/intro-img.jpg');
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        -webkit-filter: grayscale(80%) contrast(100%) brightness(100%);
-        filter: grayscale(80%) contrast(100%) brightness(100%);
-    }
-}
