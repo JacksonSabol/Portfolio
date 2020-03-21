@@ -17,11 +17,6 @@ export function About(props) {
                     Read More
                 </SiteButton>
             </article>
-            {/* <aside className="intro-aside">
-                <figure className="intro-figure">
-                    
-                </figure>
-            </aside> */}
         </div>
     );
 }
