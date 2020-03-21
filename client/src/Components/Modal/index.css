@@ -11,11 +11,13 @@
 
 .modal-wrapper {
     position: fixed;
-    top: 0;
+    top: 71px;
+    bottom: 0;
     left: 0;
+    right: 0;
     z-index: 1050;
     width: 100%;
-    height: 100%;
+    margin: auto;
     overflow-x: hidden;
     overflow-y: auto;
     outline: 0;
@@ -23,39 +25,52 @@
 
 .modal {
     z-index: 100;
-    background: white;
+    background: none;
     position: relative;
-    margin: 40vh auto 0 auto;
+    margin: 0 auto 0 auto;
     border-radius: 3px;
-    max-width: 500px;
-    padding: 2rem;
+    max-height: 100%;
+    width: 43%;
+    overflow-y: auto;
+    font-family: 'KanitMedium';
+    color: #ffffff;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 0 50px 100px rgba(0,0,0,0.14), 0 0 50px 200px rgba(0,0,0,0.12), 0 0 50px 300px rgba(0,0,0,0.2);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
-.modal-header {
-    display: flex;
-    justify-content: flex-end;
+.modal-img {
+    height: 80vmin;
+    width: auto;
+    margin: 0 auto 0 auto;
 }
 
 .modal-close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
     font-size: 1.4rem;
     font-weight: 700;
     line-height: 1;
-    color: #000;
-    opacity: .3;
+    color: #ffffff;
+    opacity: 1;
+    background: none;
     cursor: pointer;
     border: none;
-}
-
-button {
-    font-size: .9rem;
-    font-weight: 700;
-    border: none;
-    border-radius: 3px;
+    border-radius: 5px;
     padding: .3rem 1rem;
-    margin-left: .5rem;
 }
 
-.button-default {
-    background: #247BA0;
-    color: #fff;
+@media screen and (max-width: 1172px) {
+    .modal {
+        width: 57%;
+    }
+}
+@media screen and (max-width: 460px) {
+    .modal {
+        width: 67%;
+    }
 }

@@ -26,13 +26,13 @@ const Modal = ({ isShowing, handleClose, currentItem }) => {
             <div className="modal-overlay" />
             <div className="modal-wrapper" aria-modal aria-hidden tabIndex={-1} role="dialog">
                 <div ref={node} className="modal">
-                    <div className="modal-header">
-                        <button type="button" className="modal-close-button" data-dismiss="modal" aria-label="Close" onClick={handleClose}>
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <img src={currentItem.thumb} class="modal-img" alt={currentItem.projectName} />
+                    <button type="button" className="modal-close-button" data-dismiss="modal" aria-label="Close" onClick={handleClose}>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                     <p>{currentItem.projectName}</p>
+                    <div className="img-wrapper">
+                        <img src={currentItem.thumb} className="modal-img" alt={currentItem.projectName} />
+                    </div>
                     <p>{currentItem.projectCategory}</p>
                 </div>
             </div>

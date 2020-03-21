@@ -7,7 +7,8 @@ import portfolioPicOne from '../../img/portfolio/ATSPrototypeOneIcon.png';
 import portfolioThumbOne from '../../img/portfolio/ATSPrototypeOneFrame.png';
 import portfolioPicTwo from '../../img/portfolio/WompsAndChompsIconTwo.png';
 import portfolioThumbTwo from '../../img/portfolio/WompsAndChompsFrame.png';
-import portfolioPicThree from '../../img/portfolio/3.jpg';
+import portfolioPicThree from '../../img/portfolio/ATSPrototypeThreeIcon.png';
+import portfolioThumbThree from '../../img/portfolio/ATSPrototypeThreeFrame.png';
 import portfolioPicFour from '../../img/portfolio/4.jpg';
 import portfolioPicFive from '../../img/portfolio/5.jpg';
 import portfolioPicSix from '../../img/portfolio/6.jpg';
@@ -18,23 +19,24 @@ const portfolioItems = [
         modalId: 1,
         bgImg: portfolioPicOne,
         thumb: portfolioThumbOne,
-        projectName: "TailMe",
-        projectCategory: "Portal Web Application"
+        projectName: "ATS Prototype One",
+        projectCategory: "Website Redesign"
     },
     {
         key: 1,
         modalId: 2,
         bgImg: portfolioPicTwo,
         thumb: portfolioThumbTwo,
-        projectName: "React Concentration Game",
-        projectCategory: "Animated Web Application"
+        projectName: "Womps and Chomps",
+        projectCategory: "Social Media Application"
     },
     {
         key: 2,
         modalId: 3,
         bgImg: portfolioPicThree,
-        projectName: "Sparrow Tasker",
-        projectCategory: "Portal Web Application"
+        thumb: portfolioThumbThree,
+        projectName: "ATS Prototype Two",
+        projectCategory: "Website Redesign"
     },
     {
         key: 3,
