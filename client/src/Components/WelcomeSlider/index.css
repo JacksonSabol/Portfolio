@@ -139,7 +139,7 @@
 		left: 30px;
 	}
 }
-
+/* Medium Laptop : 1200px - 1305px */
 @media only screen and (min-width: 1200px) and (max-width: 1305px) {
 	.ws-item .ws-title {
 		font-size: 80px;
@@ -150,7 +150,7 @@
 	}
 }
 
-/* Medium screen */
+/* Large Tablet (iPad Pro) : 992px - 1199px */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
 	.ws-item .ws-title {
 		font-size: 65px;
@@ -161,62 +161,76 @@
 	}
 }
 
-/* Tablet iPad Pro */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
+/* Tablet (iPad) : 768px - 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
 	.ws-item .ws-title {
 		font-size: 49px;
 		margin-bottom: 20px;
 	}
 	.ws-item .ws-des {
-		font-size: 14px;
+		font-size: 16px;
+	}
+	.ws-nav {
+		right: 50px;
 	}
 }
-
-/* Large Mobile/iPad */
-@media only screen and (max-width: 768px) {
+/* Nav Next Control */
+@media only screen and (max-width: 830px) {
+	.ws-nav {
+		right: 20px;
+	}
+}
+/* Small Tablet / Large Mobile : 589px - 767px. */
+@media only screen and (max-width: 767px) {
 	.ws-item .ws-title {
 		font-size: 38px;
         margin-bottom: 20px;
-        left: 140px;
+        left: 80px;
 	}
 	.ws-item .ws-des {
         font-size: 12px;
-        left: 140px;
+        left: 80px;
 	}
 }
-
+/* Mobile : 480px - 588px */
 @media only screen and (max-width: 588px) {
 	.ws-item .ws-title {
-		font-size: 29.5px;
+		font-size: 38px;
         margin-bottom: 20px;
         left: 10px;
 	}
 	.ws-item .ws-des {
-        font-size: 10px;
-        left: 10px;
+		font-size: 12px;
+		left: 10px;
 	}
 }
-/* Small Mobile */
+/* Small Mobile : 401px - 479px */
 @media only screen and (max-width: 479px) {
 	.ws-item .ws-title {
-		font-size: 24px;
+		font-size: 38px;
         margin-bottom: 20px;
-        left: 10px;
+        left: 5px;
 	}
 	.ws-item .ws-des {
-        font-size: 8.5px;
-        left: 10px;
+        font-size: 12px;
+        left: 5px;
+	}
+	.ws-nav {
+		right: 10px;
 	}
 }
-/* Extra Small Mobile */
+/* Extra Small Mobile : < 401px*/
 @media only screen and (max-width: 400px) {
 	.ws-item .ws-title {
-		font-size: 20px;
+		font-size: 28px;
         margin-bottom: 20px;
-        left: 10px;
+        left: 0;
 	}
 	.ws-item .ws-des {
-        font-size: 7.5px;
-        left: 10px;
+        font-size: 8px;
+        left: 0;
+	}
+	.ws-nav {
+		right: 0;
 	}
 }
