@@ -102,3 +102,9 @@
 button:focus {
     outline: none;
 }
+
+@media only screen and (max-width: 588px) {
+    .next-btn {
+        font-size: 1rem;
+    }
+}
