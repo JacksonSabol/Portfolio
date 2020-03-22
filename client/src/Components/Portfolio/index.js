@@ -83,7 +83,7 @@ const portfolioItems = [
         thumb: portfolioThumbSeven,
         projectName: "Sparrow Tasker",
         projectCategory: "SaaS Web Application",
-        projectDescription: "Sparrow is a task management system that allows a user to create a list of their 'To Dos'. Sparrow then allows a user to choose to either complete there own task or post it to the global claimboard which allows another person (a Sparrow) to claim the task and complete it on the user's behalf. This allows someone to, in a sense, buy time for themselves to complete other tasks or to spend time with loved ones."
+        projectDescription: "Sparrow is a task management system that allows a user to create a list of their 'To Dos'. Sparrow then allows a user to choose to either complete their own task or post it to the global claimboard which allows another person (a Sparrow) to claim the task and complete it on the user's behalf. This allows someone to, in a sense, buy time for themselves to complete other tasks or to spend time with loved ones."
     },
     {
         key: 7,
