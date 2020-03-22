@@ -15,12 +15,12 @@ const content = {
     2: {
         bgImg: sliderTwo,
         title: "Front End",
-        des: "CSS | SASS | JavaScript ES6 | Bootstrap | jQuery | React.js | Mobile Responsive Design"
+        des: "HTML5 | CSS3 | SASS | JavaScript ES6+ | React.js | Responsive Design"
     },
     3: {
         bgImg: sliderThree,
         title: "Back End",
-        des: "Node.js | Express.js | Python | JSON | SQL | NoSQL | NPM | Command Line"
+        des: "Docker | AWS | Node.js | Express.js | SQL | NoSQL | NPM | Command Line"
     }
 };
 class WelcomeSlider extends Component {
@@ -85,7 +85,7 @@ class WelcomeSlider extends Component {
                 />
                 <div className={`ws-item${animatedOne}`} style={{ backgroundImage: `url("${content[1].bgImg}")` }}>
                     <div className="ws-text">
-                        <h2 className={`ws-title${slideOne}`}>{content[1].title}</h2>
+                        <h2 className={`ws-title${slideOne}`} style={{display: "inline-block", width: "60%"}}>{content[1].title}</h2>
                         <p className={`ws-des${slideOne}`}>{content[1].des}</p>
                     </div>
                 </div>
