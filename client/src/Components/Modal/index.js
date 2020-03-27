@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import externalLink from '../../img/external-link-icon.svg';
 
 const Modal = ({ isShowing, handleClose, currentItem }) => {
     const node = useRef();
@@ -29,12 +30,20 @@ const Modal = ({ isShowing, handleClose, currentItem }) => {
                     <button type="button" className="modal-close-button" data-dismiss="modal" aria-label="Close" onClick={handleClose}>
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <p>{currentItem.projectName}</p>
+                    <h3>{currentItem.projectName}</h3>
                     <div className="img-wrapper">
                         <img src={currentItem.thumb} className="modal-img" alt={currentItem.projectName} />
                     </div>
-                    <p>{currentItem.projectCategory}</p>
-                    <p>{currentItem.projectDescription}</p>
+                    <div className="project-details">
+                        <p>{currentItem.projectCategory}</p>
+                        <p>{currentItem.projectDescription}</p>
+                        {currentItem.githubLink &&
+                            <a href={currentItem.githubLink} target="_blank" rel="noopener noreferrer" className="project-link">GitHub Repository <img src={externalLink} alt="->" className="link-icon"></img></a>
+                        }
+                        {currentItem.deployedLink &&
+                            <a href={currentItem.deployedLink} target="_blank" rel="noopener noreferrer" className="project-link">Demo Application <img src={externalLink} alt="->" className="link-icon"></img></a>
+                        }
+                    </div>
                 </div>
             </div>
         </React.Fragment>, document.body
