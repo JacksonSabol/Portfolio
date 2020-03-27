@@ -86,7 +86,7 @@ class Splash extends Component {
                 <section className="portfolio-section section-p-pad" id="portfolio">
                     <Portfolio />
                 </section>
-                <section class="milestones-section section-sm-pad" id="services">
+                <section className="milestones-section section-sm-pad" id="services">
                     <Milestones />
                 </section>
             </div>
