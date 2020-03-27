@@ -15,6 +15,10 @@ section.ws-section {
     padding-top: 80px;
     padding-bottom: 80px;
 }
+.portfolio-section {
+    border-top: 1px solid #5f5f5f;
+}
 .milestones-section {
     background: #222121;
+    border-top: 2px solid #5f5f5f;
 }
