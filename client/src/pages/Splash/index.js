@@ -4,6 +4,7 @@ import Navbar from "../../Components/Navbar";
 import WelcomeSlider from '../../Components/WelcomeSlider';
 import { About } from '../../Components/About';
 import Portfolio from '../../Components/Portfolio';
+import Milestones from '../../Components/Milestones';
 
 class Splash extends Component {
     state = {
@@ -84,6 +85,9 @@ class Splash extends Component {
                 </section>
                 <section className="portfolio-section section-p-pad" id="portfolio">
                     <Portfolio />
+                </section>
+                <section class="milestones-section section-sm-pad" id="services">
+                    <Milestones />
                 </section>
             </div>
         );

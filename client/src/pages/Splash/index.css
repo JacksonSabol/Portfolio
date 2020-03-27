@@ -11,3 +11,10 @@ section.ws-section {
 .section-pad {
     padding: 130px 45px;
 }
+.section-sm-pad {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.milestones-section {
+    background: #222121;
+}
