@@ -1,14 +1,23 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import './index.css';
 import Navbar from "../../Components/Navbar";
 import WelcomeSlider from '../../Components/WelcomeSlider';
 import { About } from '../../Components/About';
 import Portfolio from '../../Components/Portfolio';
 import Milestones from '../../Components/Milestones';
+// import Contact from '../../Components/Contact';
 
 class Splash extends Component {
     state = {
-        scrollToggle: false
+        scrollToggle: false,
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+        sendSuccess: false,
+        emptyFields: false,
+        sendError: false
     };
 
     offset = (elm) => {
@@ -57,6 +66,48 @@ class Splash extends Component {
         }
     };
 
+    handleInputChange = event => {
+        let value = event.target.value;
+        const name = event.target.name;
+        if (name === "subject") {
+            value = value.substring(0, 78);
+        }
+        this.setState({
+            [name]: value
+        });
+    };
+
+    handleMessageSend = event => {
+        event.preventDefault();
+        if (this.state.name === '' || this.state.email === '' || this.state.subject === '' || this.state.message === '') {
+            this.setState({ emptyFields: true });
+        } else {
+            axios
+                .post('/mail/contactme', {
+                    name: this.state.name,
+                    email: this.state.email,
+                    subject: this.state.subject,
+                    message: this.state.message
+                })
+                .then(response => {
+                    console.log(response.data);
+                    this.setState({
+                        name: '',
+                        email: '',
+                        subject: '',
+                        message: '',
+                        sendSuccess: true
+                    });
+                })
+                .catch(error => {
+                    console.log(error);
+                    this.setState({
+                        sendError: true
+                    });
+                });
+        }
+    }
+
     componentDidMount = () => {
         window.addEventListener('scroll', this.handleNavbarBg);
     };
@@ -66,6 +117,7 @@ class Splash extends Component {
     };
 
     render() {
+        // const { name, email, subject, message, sendSuccess, emptyFields, sendError } = this.state;
         const scrollToggle = this.state.scrollToggle ? "scrolled" : "";
         return (
             <div>
@@ -89,6 +141,19 @@ class Splash extends Component {
                 <section className="milestones-section section-sm-pad" id="services">
                     <Milestones />
                 </section>
+                {/* <section className="contact-section" id="contact">
+                    <Contact
+                        handleInputChange={this.handleInputChange}
+                        handleMessageSend={this.handleMessageSend}
+                        name={name}
+                        email={email}
+                        subject={subject}
+                        message={message}
+                        sendSuccess={sendSuccess}
+                        emptyFields={emptyFields}
+                        sendError={sendError}
+                    />
+                </section> */}
             </div>
         );
     }
