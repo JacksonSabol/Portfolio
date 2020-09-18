@@ -29,3 +29,10 @@ export function SiteButton(props) {
         </button>
     );
 }
+export function SubmitButton(props) {
+    return (
+        <button type="button" className={props.className === "light" ? "site-btn light" : "site-btn"} {...props}>
+            {props.children}
+        </button>
+    );
+}
