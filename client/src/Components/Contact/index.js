@@ -1,6 +1,6 @@
 import React from 'react';
 import './index.css';
-import { SiteButton } from '../Button';
+import { SubmitButton } from '../Button';
 
 const Contact = (props) => {
     return (
@@ -25,21 +25,26 @@ const Contact = (props) => {
                         <form className="contact-form">
                             <div className="row">
                                 <div className="col-md-6">
-                                    <input type="text" name="name" placeholder="Your name" value={props.name} onChange={props.handleInputChange}/>
+                                    <input type="text" name="name" placeholder="Your name" value={props.name} onChange={props.handleInputChange} />
                                 </div>
                                 <div className="col-md-6">
-                                    <input type="email" name="email" placeholder="E-mail" value={props.email} onChange={props.handleInputChange}/>
+                                    <input type="email" name="email" placeholder="E-mail" value={props.email} onChange={props.handleInputChange} />
                                 </div>
                                 <div className="col-md-12">
-                                    <input type="text" name="subject" placeholder="Subject" value={props.subject} onChange={props.handleInputChange}/>
+                                    <input type="text" name="subject" id="subject-input" placeholder="Subject" data-invalid={props.subject} value={props.subject} onChange={props.handleInputChange} />
                                     <textarea name="message" placeholder="Message" value={props.message} onChange={props.handleInputChange} />
-                                    <SiteButton
-                                        onClick={() => props.handleMessageSend()}
+                                    <SubmitButton
+                                        onClick={props.handleMessageSend}
                                     >
                                         Send
-                                    </SiteButton>
+                                    </SubmitButton>
                                 </div>
                             </div>
+                            {props.emptyFields === true && (
+                                <div className="auth-alert">
+                                    <p className="form-alert">Please fill out all fields.</p>
+                                </div>
+                            )}
                         </form>
                     </div>
                 </div>
