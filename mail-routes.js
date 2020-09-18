@@ -50,10 +50,8 @@ module.exports = app => {
                 subject: 'New Portfolio Mail',
                 text: `New message from: ${name}\r\nReturn email: ${email}\r\nSubject: ${subject}\r\nMessage:\r\n${message}`
             };
-            console.log(mailOptions);
             // Send mail to client
             const emailRes = await transporter.sendMail(mailOptions);
-            console.log(emailRes);
             return res.status(200).json('Email sent');
         } catch (err) {
             console.error(err);
