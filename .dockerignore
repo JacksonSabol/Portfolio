@@ -8,6 +8,7 @@
 **/.dockerignore
 **/.gitignore
 **/.git
+**/.env
 **/README.md
 **/.vscode
 **/.DS_Store
