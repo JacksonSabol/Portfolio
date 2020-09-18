@@ -6,7 +6,7 @@ import WelcomeSlider from '../../Components/WelcomeSlider';
 import { About } from '../../Components/About';
 import Portfolio from '../../Components/Portfolio';
 import Milestones from '../../Components/Milestones';
-// import Contact from '../../Components/Contact';
+import Contact from '../../Components/Contact';
 
 class Splash extends Component {
     state = {
@@ -15,6 +15,10 @@ class Splash extends Component {
         email: '',
         subject: '',
         message: '',
+        nameInputMsg: '',
+        emailInputMsg: '',
+        subjectInputMsg: '',
+        messageInputMsg: '',
         sendSuccess: false,
         emptyFields: false,
         sendError: false
@@ -79,7 +83,7 @@ class Splash extends Component {
 
     handleMessageSend = event => {
         event.preventDefault();
-        if (this.state.name === '' || this.state.email === '' || this.state.subject === '' || this.state.message === '') {
+        if (!this.state.name || !this.state.email || this.state.subject || this.state.message) {
             this.setState({ emptyFields: true });
         } else {
             axios
@@ -100,10 +104,34 @@ class Splash extends Component {
                     });
                 })
                 .catch(error => {
-                    console.log(error);
-                    this.setState({
-                        sendError: true
-                    });
+                    console.log(error.response.data)
+                    if (error.response.data?.length) {
+                        let nameInputMsg, emailInputMsg, subjectInputMsg, messageInputMsg;
+                        for (const validationError of error.response.data) {
+                            if (validationError.param === "name") {
+                                nameInputMsg = validationError.msg;
+                            }
+                            if (validationError.param === "email") {
+                                emailInputMsg = validationError.msg;
+                            }
+                            if (validationError.param === "subject") {
+                                subjectInputMsg = validationError.msg;
+                            }
+                            if (validationError.param === "message") {
+                                messageInputMsg = validationError.msg;
+                            }
+                        }
+                        this.setState({
+                            nameInputMsg,
+                            emailInputMsg,
+                            subjectInputMsg,
+                            messageInputMsg,
+                        });
+                    } else {
+                        this.setState({
+                            sendError: true
+                        });
+                    }
                 });
         }
     }
@@ -117,7 +145,7 @@ class Splash extends Component {
     };
 
     render() {
-        // const { name, email, subject, message, sendSuccess, emptyFields, sendError } = this.state;
+        const { name, email, subject, message, sendSuccess, emptyFields, sendError } = this.state;
         const scrollToggle = this.state.scrollToggle ? "scrolled" : "";
         return (
             <div>
@@ -141,7 +169,7 @@ class Splash extends Component {
                 <section className="milestones-section section-sm-pad" id="services">
                     <Milestones />
                 </section>
-                {/* <section className="contact-section" id="contact">
+                <section className="contact-section" id="contact">
                     <Contact
                         handleInputChange={this.handleInputChange}
                         handleMessageSend={this.handleMessageSend}
@@ -153,7 +181,7 @@ class Splash extends Component {
                         emptyFields={emptyFields}
                         sendError={sendError}
                     />
-                </section> */}
+                </section>
             </div>
         );
     }
