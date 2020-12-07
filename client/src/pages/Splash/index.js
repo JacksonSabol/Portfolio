@@ -183,7 +183,7 @@ class Splash extends Component {
                         sendError={sendError}
                     />
                 </section>
-                <footer class="footer-section">
+                <footer className="footer-section">
                     <Footer />
                 </footer>
             </div>
