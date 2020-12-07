@@ -1,0 +1,192 @@
+.contact-wrap {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.contact-text {
+    text-align: left;
+    position: absolute;
+    left: 30px;
+    width: 350px;
+}
+
+.contact-container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1140px;
+}
+
+.contact-text .sp-sub-title,
+.contact-text .sp-title,
+.contact-text p {
+	color: #fff;
+}
+
+.contact-text .sp-title {
+    margin: 0;
+    margin-bottom: 35px;
+}
+
+.contact-text p {
+	font-size: 16px;
+    margin-bottom: 20px;
+    margin-top: 0;
+    line-height: 1.8;
+}
+
+.message-form-container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1140px;
+    padding: 0!important;
+}
+
+.contact-form-offset {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    -webkit-box-flex: 0;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+    margin-left: 33.333333%;
+}
+
+.contact-form {
+    padding-top: 80px;
+}
+
+.inline-row {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.contact-inline-elms {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    max-width: 50%;
+}
+
+.contact-form input[type='text'],
+.contact-form input[type='email'],
+.contact-form textarea {
+    overflow: visible;
+	width: 100%;
+	background: none;
+	border: none;
+	border-bottom: 1px solid #fff;
+	color: #fff;
+	font-size: 14px;
+	padding: 5px 0 20px;
+    margin-bottom: 20px;
+}
+
+.contact-form textarea {
+	height: 130px;
+	padding-bottom: 10px;
+	margin-bottom: 35px;
+}
+
+.contact-form ::-webkit-input-placeholder {
+	font-style: italic;
+	color: #fff;
+}
+
+.contact-form :-ms-input-placeholder {
+	font-style: italic;
+	color: #fff;
+}
+
+.contact-form ::-ms-input-placeholder {
+	font-style: italic;
+	color: #fff;
+}
+
+.contact-form ::placeholder {
+	font-style: italic;
+	color: #fff;
+}
+
+/*---------------------
+	Responsive 
+-----------------------*/
+/* Medium screen : 992px. */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .contact-text {
+		width: 100%;
+		position: relative;
+		margin-bottom: 50px;
+        left: 0;
+    }
+    .contact-container,
+    .message-form-container {
+        max-width: 960px;
+    }
+    .contact-form-offset {
+        box-sizing: border-box;
+        flex: none;
+        max-width: 100%;
+        margin-left: 0;
+    }
+}
+
+/* Tablet :768px. */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .contact-text {
+		width: 100%;
+		position: relative;
+		margin-bottom: 50px;
+		left: 0;
+    }
+    .contact-container,
+    .message-form-container {
+        max-width: 720px;
+    }
+    .contact-form-offset {
+        flex: none;
+        max-width: 100%;
+        margin-left: 0;
+    }
+}
+/* Large Mobile :480px. */
+@media only screen and (max-width: 767px) {
+    .contact-text {
+		width: 100%;
+		position: relative;
+		margin-bottom: 50px;
+		left: 0;
+    }
+    .contact-container,
+    .message-form-container {
+        max-width: 540px;
+    }
+    .contact-form-offset {
+        flex: none;
+        max-width: 100%;
+        margin-left: 0;
+    }
+    .inline-row {
+        flex-wrap: wrap;
+    }
+    .contact-inline-elms {
+        max-width: 100%;
+    }
+}
