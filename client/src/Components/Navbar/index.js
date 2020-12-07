@@ -52,11 +52,11 @@ class Navbar extends Component {
           >
             Services
           </NavbarItem>
-          {/* <NavbarItem
+          <NavbarItem
             onClick={() => this.props.handlePageScroll("contact")}
           >
             Contact
-          </NavbarItem> */}
+          </NavbarItem>
         </div>
       </nav>
     );

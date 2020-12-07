@@ -22,3 +22,42 @@ section.ws-section {
     background: #222121;
     border-top: 2px solid #5f5f5f;
 }
+.contact-section {
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 150px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 0;
+    background-image: url("../../img/contact-bg.jpg");
+}
+.contact-section:after {
+	position: absolute;
+	content: '';
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: #000;
+	opacity: 0.7;
+}
+.footer-section {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+    display: block;
+    padding-top: 130px;
+    padding-bottom: 130px;
+    background: #0d0d0d;
+}

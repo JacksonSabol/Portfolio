@@ -7,6 +7,7 @@ import { About } from '../../Components/About';
 import Portfolio from '../../Components/Portfolio';
 import Milestones from '../../Components/Milestones';
 import Contact from '../../Components/Contact';
+import Footer from '../../Components/Footer';
 
 class Splash extends Component {
     state = {
@@ -182,6 +183,9 @@ class Splash extends Component {
                         sendError={sendError}
                     />
                 </section>
+                <footer class="footer-section">
+                    <Footer />
+                </footer>
             </div>
         );
     }

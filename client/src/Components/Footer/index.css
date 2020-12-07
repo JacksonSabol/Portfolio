@@ -1,0 +1,32 @@
+.footer-container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1140px;
+    text-align: center!important;
+}
+
+.footer-container h2 {
+    line-height: 1.2;
+    margin: 0;
+    font-size: 48px;
+    color: #fff;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.footer-container .social a {
+	color: #fff;
+	margin-right: 40px;
+}
+
+.footer-container .social-icon img {
+    height: 20px;
+}
+
+.footer-container .social a:last-child {
+	margin-right: 0;
+}
