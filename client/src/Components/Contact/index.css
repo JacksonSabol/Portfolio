@@ -85,6 +85,10 @@
     max-width: 50%;
 }
 
+.contact-full-width {
+    width: 100%;
+}
+
 .contact-form input[type='text'],
 .contact-form input[type='email'],
 .contact-form textarea {

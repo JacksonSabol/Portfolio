@@ -33,7 +33,7 @@ const Contact = (props) => {
                                 )}
                             </div>
                         </div>
-                        <div className="col-md-12">
+                        <div className="contact-full-width">
                             <input type="text" name="subject" id="subject-input" placeholder="Subject" data-invalid={props.subject} value={props.subject} onChange={props.handleInputChange} />
                             {props.subjectInputMsg && (
                                 <div className="auth-alert">
