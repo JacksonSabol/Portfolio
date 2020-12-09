@@ -29,7 +29,7 @@ class Splash extends Component {
     offset = (elm) => {
         const rect = elm.getBoundingClientRect(),
             currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        return rect.top + currentScrollTop;
+        return (rect.top + currentScrollTop) - 69;
     };
 
     handlePageScroll = (hash) => {
@@ -63,14 +63,42 @@ class Splash extends Component {
         animateScroll();
     };
 
-    handleNavbarBg = () => {
+    handleScrollSpy = () => {
+        const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        let currentSection = '';
+        const aboutSection = document.getElementById('about'),
+            portfolioSection = document.getElementById('portfolio'),
+            servicesSection = document.getElementById('services'),
+            contactSection = document.getElementById('contact');
+        const aboutRect = aboutSection.getBoundingClientRect(),
+            portfolioRect = portfolioSection.getBoundingClientRect(),
+            servicesRect = servicesSection.getBoundingClientRect(),
+            contactRect = contactSection.getBoundingClientRect();
+        const aboutRectTop = aboutRect.top - 71,
+            portfolioRectTop = portfolioRect.top - 71,
+            servicesRectTop = servicesRect.top - 71,
+            contactRectTop = contactRect.top - 71;
+        if (aboutRectTop <= 0 && portfolioRectTop > 0) {
+            currentSection = 'about';
+        } else if (portfolioRectTop <= 0 && servicesRectTop > 0) {
+            currentSection = 'portfolio';
+        } else if (servicesRectTop <= 0 && contactRectTop > 0) {
+            currentSection = 'services';
+        } else if (contactRectTop <= 0) {
+            currentSection = 'contact';
+        }
         const navbarHeight = document.getElementById('scroll-toggler');
         const startY = navbarHeight.offsetHeight * 2;
-        const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
         if (currentScrollTop > startY) {
-            this.setState({ scrollToggle: true });
+            this.setState({
+                scrollToggle: true,
+                currentSection: currentSection
+            });
         } else {
-            this.setState({ scrollToggle: false });
+            this.setState({
+                scrollToggle: false,
+                currentSection: currentSection
+            });
         }
     };
 
@@ -140,11 +168,11 @@ class Splash extends Component {
     }
 
     componentDidMount = () => {
-        window.addEventListener('scroll', this.handleNavbarBg);
+        window.addEventListener('scroll', this.handleScrollSpy);
     };
 
     componentWillUnmount = () => {
-        window.removeEventListener('scroll', this.handleNavbarBg);
+        window.removeEventListener('scroll', this.handleScrollSpy);
     };
 
     render() {
