@@ -125,6 +125,15 @@
 	color: #fff;
 }
 
+.form-alert {
+    color: red;
+}
+
+.form-validation-alert {
+    color: red;
+    margin: 0;
+}
+
 /*---------------------
 	Responsive 
 -----------------------*/
