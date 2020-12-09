@@ -5,9 +5,9 @@ const { check, validationResult } = require('express-validator');
 const validations = [
     check('name')
         .trim()
-        .isLength({ min: 3 })
+        .isLength({ min: 2 })
         .escape()
-        .withMessage('A name is required'),
+        .withMessage('A name of at least 2 characters is required'),
     check('email')
         .trim()
         .isEmail()
@@ -17,12 +17,12 @@ const validations = [
         .trim()
         .isLength({ min: 3 })
         .escape()
-        .withMessage('A subject is required'),
+        .withMessage('A subject of at least 3 characters is required'),
     check('message')
         .trim()
         .isLength({ min: 5 })
         .escape()
-        .withMessage('A message is required'),
+        .withMessage('A message of at least 5 characters is required'),
 ];
 
 module.exports = app => {
