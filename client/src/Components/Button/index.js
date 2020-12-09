@@ -10,7 +10,7 @@ export function SabolDesigns(props) {
 }
 export function NavbarItem(props) {
     return (
-        <button className="navbar-nav-item-btn" {...props}>
+        <button className={`navbar-nav-item-btn${props.active}`} onClick={props.onClick}>
             {props.children}
         </button>
     );

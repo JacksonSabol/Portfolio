@@ -12,6 +12,7 @@ import Footer from '../../Components/Footer';
 class Splash extends Component {
     state = {
         scrollToggle: false,
+        currentSection: '',
         name: '',
         email: '',
         subject: '',
@@ -32,9 +33,11 @@ class Splash extends Component {
     };
 
     handlePageScroll = (hash) => {
-        let element = document.getElementById(hash);
-        let target = this.offset(element);
-        this.scrollTo(document.scrollingElement, target, 1250);
+        this.setState({ currentSection: hash }, () => {
+            let element = document.getElementById(hash);
+            let target = this.offset(element);
+            this.scrollTo(document.scrollingElement, target, 1250);
+        });
     };
     // Animated scrolling
     scrollTo = (element, to, duration) => {
@@ -145,12 +148,13 @@ class Splash extends Component {
     };
 
     render() {
-        const { name, email, subject, message, sendSuccess, emptyFields, sendError, nameInputMsg, emailInputMsg, subjectInputMsg, messageInputMsg } = this.state;
+        const { currentSection, name, email, subject, message, sendSuccess, emptyFields, sendError, nameInputMsg, emailInputMsg, subjectInputMsg, messageInputMsg } = this.state;
         const scrollToggle = this.state.scrollToggle ? "scrolled" : "";
         return (
             <div>
                 <header>
                     <Navbar
+                        currentSection={currentSection}
                         handlePageScroll={this.handlePageScroll}
                         class={scrollToggle}
                     />

@@ -1,66 +1,60 @@
-import React, { Component } from "react";
-import './index.css';
+import React, { useRef, useEffect } from "react";
+import { useDetectOutsideClick } from './useDetectOutsideClick';
+import NavbarHamburger from './hamburger';
 import { NavbarItem, SabolDesigns } from '../Button';
 import logoImg from '../../img/WhiteSabol.png';
+import './index.css';
 
-class Navbar extends Component {
-  // Set the initial state value for responsive hamburger menu
-  state = {
-    toggled: false
-  };
+const Navbar = (props) => {
+  const navRef = useRef(null);
+  // Get state methods and set up detection of click outside navbar
+  const [toggled, setToggled] = useDetectOutsideClick(navRef, false);
 
-  toggleMenu = () => {
-    this.setState(state => ({
-      toggled: !state.toggled
-    }));
-  }
+  // Close the navbar dropdown every time the user clicks on a section option
+  useEffect(() => {
+    setToggled(false);
+  }, [props.currentSection, setToggled]);
 
-  render() {
-    const iconToggled = this.state.toggled ? "toggled" : "";
-    const navbarToggled = this.state.toggled ? "open" : "";
-    return (
-      <nav className={`navbar ${this.props.class}`} id="scroll-toggler">
-        {/* <p className="welcome-message">Welcome, {this.props.username}!</p> */}
-        <div className="navbar-hamburger">
-          <div className={`navbar-toggle ${iconToggled}`}>
-            <button type="button" className="navbar-toggler" onClick={() => this.toggleMenu()}>
-              <span className="navbar-toggler-bar bar1"></span>
-              <span className="navbar-toggler-bar bar2"></span>
-              <span className="navbar-toggler-bar bar3"></span>
-            </button>
-          </div>
-        </div>
+  const iconToggled = toggled ? "toggled" : "",
+    navbarToggled = toggled ? "open" : "";
+
+  return (
+    <nav ref={navRef} className={`navbar ${props.class}`} id="scroll-toggler">
+      <NavbarHamburger toggled={iconToggled} onClick={() => setToggled(!toggled)} />
         <img src={logoImg} className="logo" alt="Sabol Designs" />
         <SabolDesigns
-            onClick={() => this.props.handlePageScroll("top")}
-          >
-            Jackson Sabol
+          onClick={() => props.handlePageScroll("top")}
+        >
+          Jackson Sabol
           </SabolDesigns>
         <div className={`navbar-nav ${navbarToggled}`}>
           <NavbarItem
-            onClick={() => this.props.handlePageScroll("about")}
+            active={props.currentSection === 'about' ? ' active' : ''}
+            onClick={() => props.handlePageScroll('about')}
           >
             About Me
           </NavbarItem>
           <NavbarItem
-            onClick={() => this.props.handlePageScroll("portfolio")}
+            active={props.currentSection === 'portfolio' ? ' active' : ''}
+            onClick={() => props.handlePageScroll('portfolio')}
           >
             Portfolio
           </NavbarItem>
           <NavbarItem
-            onClick={() => this.props.handlePageScroll("services")}
+            active={props.currentSection === 'services' ? ' active' : ''}
+            onClick={() => props.handlePageScroll('services')}
           >
             Services
           </NavbarItem>
           <NavbarItem
-            onClick={() => this.props.handlePageScroll("contact")}
+            active={props.currentSection === 'contact' ? ' active' : ''}
+            onClick={() => props.handlePageScroll('contact')}
           >
             Contact
           </NavbarItem>
         </div>
-      </nav>
-    );
-  }
-}
+    </nav>
+  );
+};
 
 export default Navbar;

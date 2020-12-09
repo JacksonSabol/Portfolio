@@ -35,6 +35,9 @@
     font-weight: bold;
     color: rgb(201, 201, 201);
 }
+.navbar-nav-item-btn.active {
+    text-decoration: underline;
+}
 @media screen and (max-width: 768px) {
     .navbar-nav-item-btn {
         padding: 1.6em 1.5em 1.6em 0.5em;
