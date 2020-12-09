@@ -18,14 +18,34 @@ const Contact = (props) => {
                         <div className="inline-row">
                             <div className="contact-inline-elms">
                                 <input type="text" name="name" placeholder="Your name" value={props.name} onChange={props.handleInputChange} />
+                                {props.nameInputMsg && (
+                                    <div className="auth-alert">
+                                        <p className="form-validation-alert">{props.nameInputMsg}</p>
+                                    </div>
+                                )}
                             </div>
                             <div className="contact-inline-elms">
                                 <input type="email" name="email" placeholder="E-mail" value={props.email} onChange={props.handleInputChange} />
+                                {props.emailInputMsg && (
+                                    <div className="auth-alert">
+                                        <p className="form-validation-alert">{props.emailInputMsg}</p>
+                                    </div>
+                                )}
                             </div>
                         </div>
                         <div className="col-md-12">
                             <input type="text" name="subject" id="subject-input" placeholder="Subject" data-invalid={props.subject} value={props.subject} onChange={props.handleInputChange} />
+                            {props.subjectInputMsg && (
+                                <div className="auth-alert">
+                                    <p className="form-validation-alert">{props.subjectInputMsg}</p>
+                                </div>
+                            )}
                             <textarea name="message" placeholder="Message" value={props.message} onChange={props.handleInputChange} />
+                            {props.messageInputMsg && (
+                                <div className="auth-alert">
+                                    <p className="form-validation-alert">{props.messageInputMsg}</p>
+                                </div>
+                            )}
                             <SubmitButton
                                 type={'light'}
                                 onClick={props.handleMessageSend}

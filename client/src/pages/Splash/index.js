@@ -84,7 +84,7 @@ class Splash extends Component {
 
     handleMessageSend = event => {
         event.preventDefault();
-        if (!this.state.name || !this.state.email || this.state.subject || this.state.message) {
+        if (!this.state.name || !this.state.email || !this.state.subject || !this.state.message) {
             this.setState({ emptyFields: true });
         } else {
             axios
@@ -105,7 +105,6 @@ class Splash extends Component {
                     });
                 })
                 .catch(error => {
-                    console.log(error.response.data)
                     if (error.response.data?.length) {
                         let nameInputMsg, emailInputMsg, subjectInputMsg, messageInputMsg;
                         for (const validationError of error.response.data) {
@@ -146,7 +145,7 @@ class Splash extends Component {
     };
 
     render() {
-        const { name, email, subject, message, sendSuccess, emptyFields, sendError } = this.state;
+        const { name, email, subject, message, sendSuccess, emptyFields, sendError, nameInputMsg, emailInputMsg, subjectInputMsg, messageInputMsg } = this.state;
         const scrollToggle = this.state.scrollToggle ? "scrolled" : "";
         return (
             <div>
@@ -181,6 +180,10 @@ class Splash extends Component {
                         sendSuccess={sendSuccess}
                         emptyFields={emptyFields}
                         sendError={sendError}
+                        nameInputMsg={nameInputMsg}
+                        emailInputMsg={emailInputMsg}
+                        subjectInputMsg={subjectInputMsg}
+                        messageInputMsg={messageInputMsg}
                     />
                 </section>
                 <footer className="footer-section">
