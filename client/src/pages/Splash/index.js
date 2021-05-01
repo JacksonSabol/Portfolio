@@ -132,11 +132,13 @@ class Splash extends Component {
                         email: '',
                         subject: '',
                         message: '',
-                        sendSuccess: true
+                        sendSuccess: true,
+                        sendError: false
                     });
                 })
                 .catch(error => {
-                    if (error.response.data?.length) {
+                    console.dir(error)
+                    if (error.response.status === 422) {
                         let nameInputMsg, emailInputMsg, subjectInputMsg, messageInputMsg;
                         for (const validationError of error.response.data) {
                             if (validationError.param === "name") {
@@ -157,9 +159,14 @@ class Splash extends Component {
                             emailInputMsg,
                             subjectInputMsg,
                             messageInputMsg,
+                            sendError: false
                         });
                     } else {
                         this.setState({
+                            nameInputMsg: '',
+                            emailInputMsg: '',
+                            subjectInputMsg: '',
+                            messageInputMsg: '',
                             sendError: true
                         });
                     }
