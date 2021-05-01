@@ -58,6 +58,11 @@ const Contact = (props) => {
                                 <p className="form-alert">Please fill out all fields.</p>
                             </div>
                         )}
+                        {props.sendError === true && (
+                            <div className="auth-alert">
+                                <p className="form-alert">Something unexpected went wrong. Please use the social links below to contact me with any questions, comments, or inquiries.</p>
+                            </div>
+                        )}
                     </form>
                 </div>
             </div>
