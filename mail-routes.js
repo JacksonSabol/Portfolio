@@ -45,7 +45,7 @@ module.exports = app => {
             });
             // Define message for nodemailer
             const mailOptions = {
-                from: 'Portfolio Mail - jacksonsaboldesign@gmail.com',
+                from: `Portfolio Mail - ${process.env.EMAIL_ADDRESS}`,
                 to: `${emailTo}`,
                 subject: 'New Portfolio Mail',
                 text: `New message from: ${name}\r\nReturn email: ${email}\r\nSubject: ${subject}\r\nMessage:\r\n${message}`
@@ -54,8 +54,8 @@ module.exports = app => {
             const emailRes = await transporter.sendMail(mailOptions);
             return res.status(200).json('Email sent');
         } catch (err) {
-            console.error(err);
-            return res.status(422).send(err);
+            console.dir(err);
+            return res.sendStatus(500);
         }
     })
 };
