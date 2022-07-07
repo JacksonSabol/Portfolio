@@ -43,7 +43,7 @@
     "express": "^4.16.4",
     "express-validator": "^6.4.0",
     "if-env": "^1.0.4",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "nodemailer": "^6.0.0"
   }
 }
